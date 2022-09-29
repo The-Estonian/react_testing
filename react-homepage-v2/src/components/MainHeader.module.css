@@ -1,0 +1,31 @@
+.header{
+    /* position: absolute; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3.5rem;
+    background: rgb(18, 49, 88);
+    width: 100%;
+}
+
+.header nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.header-link{
+    padding: 0.75rem;
+    margin: 0.12rem;
+    border-radius: 4px;
+    background: rgb(78, 35, 117);
+    border: 1px solid white;
+}
+
+.header nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.active{
+    background: rgb(24, 77, 146);
+}
