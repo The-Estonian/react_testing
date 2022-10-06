@@ -1,0 +1,32 @@
+.picture-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.picture-container div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    margin: 0.25rem;
+    padding: 0.25rem;
+    width: 20rem;
+    height: 15rem;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+
+.picture-container div p,
+.picture-container div h3,
+.picture-container div img {
+    margin: 0.25rem;
+}
+
+.picture-container div img {
+    border-radius: 50%;
+}
