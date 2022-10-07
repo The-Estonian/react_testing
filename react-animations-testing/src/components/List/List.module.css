@@ -22,10 +22,29 @@
 }
 
 .Button {
-    border: 1px solid #521751;
-    font: inherit;
-    padding: 8px;
-    background-color: #521751;
-    color: white;
-    cursor: pointer;
-  }
+  border: 1px solid #521751;
+  font: inherit;
+  padding: 8px;
+  background-color: #521751;
+  color: white;
+  cursor: pointer;
+}
+
+.asd1 {
+  opacity: 0;
+}
+
+.asd2 {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}
+
+.asd3 {
+  opacity: 1;
+}
+
+.asd4 {
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+

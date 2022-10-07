@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import styles from './List.module.css';
+import TransitionGroup from 'react-transition-group/TransitionGroup';
+import CSSTransition from 'react-transition-group/CSSTransition';
 
 const DUMMY_ITEMS = [1, 2, 3];
 const List = () => {
@@ -22,17 +24,24 @@ const List = () => {
         Add Item
       </button>
       <p>Click Item to Remove.</p>
-      <ul className={styles.List}>
+      <TransitionGroup component='ul' className={styles.List}>
         {listItems.map((item) => (
-          <li
-            key={Math.random()}
-            className={styles.ListItem}
-            onClick={removeItem}
+          <CSSTransition
+            key={item}
+            timeout={500}
+            classNames={{
+              enter: styles.asd1,
+              enterActive: styles.asd2,
+              exit: styles.asd3,
+              exitActive: styles.asd4,
+            }}
           >
-            {item}
-          </li>
+            <li className={styles.ListItem} onClick={removeItem}>
+              {item}
+            </li>
+          </CSSTransition>
         ))}
-      </ul>
+      </TransitionGroup>
     </div>
   );
 };
