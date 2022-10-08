@@ -1,0 +1,11 @@
+.picture{
+    
+}
+
+.picture img{
+    border-radius: 10px;
+    height: 15rem;
+    width: 30rem;
+    margin: 0.3rem;
+    box-shadow: rgba(255, 255, 255, 0.288) 0px 7px 29px 0px;
+}
