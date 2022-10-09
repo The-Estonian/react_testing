@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 0.08rem;
+  color: rgb(218, 210, 164);
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 4rem;
+  /* background: linear-gradient(50deg, rgba(255, 172, 95, 0.3), rgba(248, 227, 88, 0.3), rgba(247, 186, 130, 0.3), rgba(238, 223, 124, 0.3)); */
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.content__stack {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+.content__stack__picture {
+  margin: 2rem;
+}
+.content__stack__picture img {
+  height: 10rem;
+  width: 10rem;
+  border-radius: 0.5rem;
+}
+.content__stack__description {
+  text-align: center;
+}
+.content__stack__description p {
+  padding: 0.25rem;
+}
+.content__contacts {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.content__contacts .name,
+.content__contacts .phone,
+.content__contacts .email {
+  padding: 0.5rem 1rem;
+  border-right: 2px solid black;
+}
+.content__contacts .location {
+  padding: 0 1rem;
+}
+.content__links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.content__links a {
+    color: rgb(218, 210, 164);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
+.content__profileSummary {
+  border-bottom: 1px solid black;
+  width: 80%;
+  padding: 1rem;
+  margin: 0.5rem;
+}
+.content__langEdu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid black;
+  margin: 1rem;
+}
+.content__langEdu__languages {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem 1rem;
+  margin-bottom: 3rem;
+}
+.content__langEdu__languages p {
+  padding: 0.5rem 0.25rem;
+}
+.content__langEdu__education {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px solid black;
+}
+.content__langEdu__education__divider {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.25rem;
+}
+.content__langEdu__education__divider p {
+  padding: 0.25rem;
+}
+.content__langEdu__education__divider:first-child {
+  border-bottom: 1px solid black;
+}
+.content h3 {
+  margin-right: 10.5rem;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  height: 4rem;
+  width: 100%;
+}
+footer a {
+  color: black;
+  border-radius: 0.5rem;
+  background: linear-gradient(50deg, rgba(255, 172, 95, 0.3), rgba(248, 227, 88, 0.3), rgba(247, 186, 130, 0.3), rgba(238, 223, 124, 0.3));
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  text-decoration: none;
+  width: 45%;
+  margin: 0.5rem;
+  padding: 1.2rem 23.62%;
+}/*# sourceMappingURL=main.css.map */

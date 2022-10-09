@@ -1,9 +1,9 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useState } from 'react';
 import {
   RouterProvider,
   createBrowserRouter,
   createRoutesFromElements,
-  Route,
+  Route
 } from 'react-router-dom';
 
 import RootContainer from './components/RootContainer';
@@ -11,10 +11,7 @@ const HomePage = React.lazy(() => import('./pages/HomePage'));
 const Skills = React.lazy(() => import('./pages/Skills'));
 const Portfolio = React.lazy(() => import('./pages/Portfolio'));
 const Contacts = React.lazy(() => import('./pages/Contacts'));
-// import HomePage from './pages/HomePage';
-// import Skills from './pages/Skills';
-// import Portfolio from './pages/Portfolio';
-// import Contacts from './pages/Contacts';
+const CV = React.lazy(() => import("./pages/CV"))
 
 import './App.module.css';
 
@@ -25,13 +22,14 @@ const router = createBrowserRouter(
       <Route path='/skills' element={<Skills />} />
       <Route path='/portfolio' element={<Portfolio />} />
       <Route path='/contacts' element={<Contacts />} />
+      <Route path='/cv' element={<CV />} />
     </Route>
   )
 );
 
 function App() {
   return (
-    <Suspense>
+    <Suspense fallback={<p>Loading...</p>}>
       <RouterProvider router={router} />
     </Suspense>
   );

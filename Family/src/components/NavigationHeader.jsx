@@ -19,6 +19,11 @@ const NavigationHeader = () => {
         </NavLink>
       </li>
       <li>
+        <NavLink to='/cv' className={linkChecker}>
+          CV
+        </NavLink>
+      </li>
+      <li>
         <NavLink to='/portfolio' className={linkChecker}>
           Portfolio
         </NavLink>
