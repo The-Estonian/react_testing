@@ -33,6 +33,19 @@ const NavigationHeader = () => {
           Contacts
         </NavLink>
       </li>
+      <li className={styles.serverConnection}>
+        Connection
+      </li>
+      <li>
+        <NavLink to='/profile' className={linkChecker}>
+          Profile
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to='/login' className={linkChecker}>
+          Login
+        </NavLink>
+      </li>
     </ul>
   );
 };

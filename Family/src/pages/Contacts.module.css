@@ -1,0 +1,44 @@
+.picture {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contactImage{
+    margin: 0.5rem;
+    border-radius: 8px;
+    box-shadow: rgba(255, 255, 255, 0.288) 0px 7px 29px 0px;
+}
+
+.contactInfo{
+    position: relative;
+    margin: 0.2rem;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: rgba(255, 255, 255, 0.123) 0px 7px 29px 0px;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 17rem;
+}
+
+button{
+    border: none;
+    overflow: hidden;
+    margin-left: 0.5rem;
+    padding: none;
+    display: inline-flex;
+}
+
+
+button img {
+    position: absolute;
+    right: 5%;
+    top: 19%;
+    padding: 0.1rem;
+    margin: none;
+    height: 2rem;
+    width: 2rem;
+    cursor: pointer;
+}

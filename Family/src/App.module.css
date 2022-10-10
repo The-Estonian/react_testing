@@ -1,9 +1,18 @@
-*{
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
+* {
   margin: 0;
-  box-sizing: border-box;
   padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 0.08rem;
+  color: rgb(218, 210, 164);
 }
 
 :root{
-  background: rgb(92, 85, 85);
+  background: #5c5555;
+}
+
+.centered{
+  margin-top: 5rem;
+  text-align: center;
 }

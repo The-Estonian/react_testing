@@ -6,35 +6,71 @@ import styles from './Portfolio.module.css';
 
 import pic1 from '../assets/images/calculator.jpg';
 import pic2 from '../assets/images/collection.jpg';
-import pic3 from '../assets/images/my_tic_tac_toe.jpg';
 import pic4 from '../assets/images/jsTesting.jpg';
 import pic5 from '../assets/images/squirrel.jpg';
 import pic6 from '../assets/images/starling.jpg';
 import pic7 from '../assets/images/Game.jpg';
 import pic8 from '../assets/images/monster_killer_game.jpg';
 import pic9 from '../assets/images/django-proj.gif';
+import pic10 from '../assets/images/orange-style.jpg';
+import pic11 from '../assets/images/purple-style.jpg';
+import pic12 from '../assets/images/green-style.jpg';
 
 const Portfolio = () => {
-  const pictureArray = [pic9, pic2, pic5, pic6, pic3, pic7 , pic4, pic8, pic1];
+  const portfolioObj = [
+    {
+      img: pic6,
+      url: 'https://github.com/The-Estonian/7-animal-wiki-homework',
+    },
+    {
+      img: pic2,
+      url: 'https://github.com/The-Estonian/7-animal-wiki-homework',
+    },
+    {
+      img: pic5,
+      url: 'https://github.com/The-Estonian/7-animal-wiki-homework',
+    },
+    {
+      img: pic10,
+      url: 'https://github.com/The-Estonian/LMBS',
+    },
+    {
+      img: pic11,
+      url: 'https://github.com/The-Estonian/LMBS',
+    },
+    {
+      img: pic12,
+      url: 'https://github.com/The-Estonian/LMBS',
+    },
+    {
+      img: pic9,
+      url: 'https://github.com/The-Estonian/Django_project',
+    },
+    {
+      img: pic7,
+      url: 'https://github.com/The-Estonian/Python_tic_tac_toe',
+    },
+    {
+      img: pic4,
+      url: 'https://github.com/The-Estonian/sword_menu_tests',
+    },
+    {
+      img: pic8,
+      url: 'https://github.com/The-Estonian/monster_killer_game',
+    },
+    {
+      img: pic1,
+      url: 'https://github.com/The-Estonian/js_calculator',
+    },
+  ];
   return (
-    <CSSTransition
-      mountOnEnter
-      unmountOnExit
-      in={true}
-      timeout={300}
-      classNames={{
-        enterActive: styles['enter-portfolio'],
-        enterDone: '',
-        exitActive: styles['exit-portfolio'],
-        exitDone: '',
-      }}
-    >
-      <div className={styles.portfolio}>
-        {pictureArray.map((images) => (
-          <Picture key={images} img={images} />
-        ))}
-      </div>
-    </CSSTransition>
+    <div className={styles.portfolio}>
+      {portfolioObj.map((images) => (
+        <a key={images.img} href={images.url} target='_blank'>
+          <Picture img={images.img} />
+        </a>
+      ))}
+    </div>
   );
 };
 

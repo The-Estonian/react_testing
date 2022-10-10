@@ -12,8 +12,9 @@ const Skills = React.lazy(() => import('./pages/Skills'));
 const Portfolio = React.lazy(() => import('./pages/Portfolio'));
 const Contacts = React.lazy(() => import('./pages/Contacts'));
 const CV = React.lazy(() => import("./pages/CV"))
+const Login = React.lazy(() => import("./authentication/Login"))
 
-import './App.module.css';
+import styles from'./App.module.css';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -23,13 +24,14 @@ const router = createBrowserRouter(
       <Route path='/portfolio' element={<Portfolio />} />
       <Route path='/contacts' element={<Contacts />} />
       <Route path='/cv' element={<CV />} />
+      <Route path='/login' element={<Login />} />
     </Route>
   )
 );
 
 function App() {
   return (
-    <Suspense fallback={<p>Loading...</p>}>
+    <Suspense fallback={<p className={styles.centered}>Loading...</p>}>
       <RouterProvider router={router} />
     </Suspense>
   );

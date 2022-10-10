@@ -2,6 +2,8 @@ import React from 'react';
 
 import styles from "./CV.module.css"
 
+import myImage from "../assets/images/resizeImg.jpg"
+
 const CV = () => {
   return (
     <div className={styles.container}>
@@ -15,7 +17,7 @@ const CV = () => {
             <p>Databases : MySQL</p>
           </div>
           <div className={styles["content__stack__picture"]}>
-            <img src='assets\images\resizeImg.jpg' alt='myimage' />
+            <img src={myImage} alt='myimage' />
           </div>
         </div>
         <div className={styles['content__profileSummary']}>

@@ -6,7 +6,7 @@
     align-items: center;
 }
 
-.enter-portfolio{
+/* .enter-portfolio{
     animation: openPortfolio 0.3s ease-out forwards;
 }
 
@@ -43,4 +43,4 @@
       opacity: 0;
       transform: translateX(-100%);
     }
-  }
+  } */
