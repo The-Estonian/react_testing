@@ -1,9 +1,49 @@
 import React from 'react';
 import styles from './NavigationHeader.module.css';
+import { dbVisualActions } from '../store/DatabaseConnectionVisual';
 
 import { NavLink } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 
 const NavigationHeader = () => {
+  const dispatch = useDispatch()
+  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+  const currentStatus = useSelector((state) => state.dbStatus.ConnectionVisual);
+  const connectionTrigger = () => {
+    if (currentStatus.status === 'CONNECTED') {
+      dispatch(
+        dbVisualActions.refreshNotification({
+          status: 'WORKING',
+          title: 'Connection ready to be used',
+        })
+      );
+    }
+    if (currentStatus.status === 'WORKING') {
+      dispatch(
+        dbVisualActions.refreshNotification({
+          status: 'BUSY',
+          title: 'Connection ready to be used',
+        })
+      );
+    }
+    if (currentStatus.status === 'BUSY') {
+      dispatch(
+        dbVisualActions.refreshNotification({
+          status: 'CONNECTED',
+          title: 'Connection ready to be used',
+        })
+      );
+    }
+  };
+
+  let connectionStyle = styles['server-connection-ready'];
+  if (currentStatus.status === 'WORKING') {
+    connectionStyle = styles['server-connection-working'];
+  }
+  if (currentStatus.status === 'BUSY') {
+    connectionStyle = styles['server-connection-busy'];
+  }
+
   const linkChecker = ({ isActive }) =>
     isActive ? styles.activeLink : styles.notActiveLink;
   return (
@@ -33,9 +73,7 @@ const NavigationHeader = () => {
           Contacts
         </NavLink>
       </li>
-      <li className={styles.serverConnection}>
-        Connection
-      </li>
+      <li className={connectionStyle} onClick={connectionTrigger}>Connection</li>
       <li>
         <NavLink to='/profile' className={linkChecker}>
           Profile

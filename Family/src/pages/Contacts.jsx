@@ -22,7 +22,7 @@ const Contacts = () => {
           }}
         ><img src={copyButton}/></button>
       </p>
-      <p className={styles.contactInfo} >
+      <div className={styles.contactInfo} >
         <p>Phone:</p>
         <p ref={phoneRef}>+37258218417</p>
         <button
@@ -30,7 +30,7 @@ const Contacts = () => {
             navigator.clipboard.writeText(phoneRef.current.textContent);
           }}
         ><img src={copyButton}/></button>
-      </p>
+      </div>
       <p className={styles.contactInfo} ref={addressRef}>
       Europe, Estonia, Tartu
         <button

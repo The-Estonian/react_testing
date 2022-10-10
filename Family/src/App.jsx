@@ -3,7 +3,8 @@ import {
   RouterProvider,
   createBrowserRouter,
   createRoutesFromElements,
-  Route
+  Route,
+  Navigate
 } from 'react-router-dom';
 
 import RootContainer from './components/RootContainer';
@@ -25,6 +26,7 @@ const router = createBrowserRouter(
       <Route path='/contacts' element={<Contacts />} />
       <Route path='/cv' element={<CV />} />
       <Route path='/login' element={<Login />} />
+      <Route path="*" element={<Navigate to="/"/>}/>
     </Route>
   )
 );

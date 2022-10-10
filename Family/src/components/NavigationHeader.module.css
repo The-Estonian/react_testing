@@ -46,7 +46,27 @@ margin-left: auto;
   text-decoration: none;
 }
 
-.serverConnection{
-  background: greenyellow !important;
+.server-connection-ready{
+  background: rgb(0, 179, 0) !important;
   color: black !important;
+  border: none !important;
+  user-select: none;
+}
+.server-connection-working{
+  background: rgb(239, 255, 19) !important;
+  color: black !important;
+  border: none !important;
+  user-select: none;
+}
+.server-connection-busy{
+  background: rgb(255, 36, 36) !important;
+  color: black !important;
+  border: none !important;
+  user-select: none;
+}
+
+.server-connection-ready:hover,
+.server-connection-working:hover,
+.server-connection-busy:hover {
+  transform: rotate(0) !important;
 }
