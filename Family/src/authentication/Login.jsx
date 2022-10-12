@@ -4,18 +4,31 @@ import styles from './Login.module.css';
 
 const Login = () => {
   const [loginRegister, setLoginRegister] = useState(true);
+  const [loginState, setLoginState] = useState('');
   const firstName = useRef();
   const LastName = useRef();
   const Email = useRef();
   const Password = useRef();
 
-const loginOrRegisterHandler = () => {
-  setLoginRegister(!loginRegister)
-}
+  const loginOrRegisterHandler = () => {
+    setLoginRegister(!loginRegister);
+  };
+
+  let disabledFeature = '';
+  const formSubmitHandler = (e) => {
+    e.preventDefault();
+    setLoginState(
+      <div className={styles.centered}>
+        <p>Backend currently in development.</p>
+        <p>Registration/Login disabled</p>
+      </div>
+    );
+  };
 
   return (
     <div className={styles.login}>
-      <form>
+      {loginState}
+      <form onSubmit={formSubmitHandler}>
         {!loginRegister && (
           <label>
             <span>First name</span>
@@ -38,7 +51,11 @@ const loginOrRegisterHandler = () => {
         </label>
         <button type='submit'>{loginRegister ? 'Submit' : 'Register'}</button>
       </form>
-      <p className={styles.loginSwitchButton} onClick={loginOrRegisterHandler}>{loginRegister ? "Click here to Register account!" : "Login to your account!"}</p>
+      <p className={styles.loginSwitchButton} onClick={loginOrRegisterHandler}>
+        {loginRegister
+          ? 'Click here to Register account!'
+          : 'Login to your account!'}
+      </p>
     </div>
   );
 };

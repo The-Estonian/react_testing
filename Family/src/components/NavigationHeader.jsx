@@ -51,7 +51,7 @@ const NavigationHeader = () => {
     isActive ? styles.activeLink : styles.notActiveLink;
   return (
     <ul className={styles.navigation}>
-      <li>
+      {/* <li>
         <NavLink to='/' className={linkChecker} end>
           Home
         </NavLink>
@@ -60,7 +60,7 @@ const NavigationHeader = () => {
         <NavLink to='/skills' className={linkChecker}>
           Skills
         </NavLink>
-      </li>
+      </li> */}
       <li>
         <NavLink to='/cv' className={linkChecker}>
           CV
@@ -88,7 +88,7 @@ const NavigationHeader = () => {
       )}
       {!isAuthenticated && (
         <li>
-          <NavLink to='/login' className={linkChecker}>
+          <NavLink to='/login' className={linkChecker} >
             Login
           </NavLink>
         </li>
