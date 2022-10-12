@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
 const NavigationHeader = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   const currentStatus = useSelector((state) => state.dbStatus.ConnectionVisual);
   const connectionTrigger = () => {
@@ -35,14 +35,17 @@ const NavigationHeader = () => {
       );
     }
   };
-
-  let connectionStyle = styles['server-connection-ready'];
+  let activeStyling;
+  if (currentStatus.status === 'CONNECTED') {
+    activeStyling = styles['server-connection-ready'];
+  }
   if (currentStatus.status === 'WORKING') {
-    connectionStyle = styles['server-connection-working'];
+    activeStyling = styles['server-connection-working'];
   }
   if (currentStatus.status === 'BUSY') {
-    connectionStyle = styles['server-connection-busy'];
+    activeStyling = styles['server-connection-busy'];
   }
+  let connectionStyle = `${activeStyling} ${styles.authNav}`;
 
   const linkChecker = ({ isActive }) =>
     isActive ? styles.activeLink : styles.notActiveLink;
@@ -73,17 +76,28 @@ const NavigationHeader = () => {
           Contacts
         </NavLink>
       </li>
-      <li className={connectionStyle} onClick={connectionTrigger}>Connection</li>
-      <li>
-        <NavLink to='/profile' className={linkChecker}>
-          Profile
-        </NavLink>
+      <li className={connectionStyle} onClick={connectionTrigger}>
+        Connection
       </li>
-      <li>
-        <NavLink to='/login' className={linkChecker}>
-          Login
-        </NavLink>
-      </li>
+      {isAuthenticated && (
+        <li>
+          <NavLink to='/profile' className={linkChecker}>
+            Profile
+          </NavLink>
+        </li>
+      )}
+      {!isAuthenticated && (
+        <li>
+          <NavLink to='/login' className={linkChecker}>
+            Login
+          </NavLink>
+        </li>
+      )}
+      {isAuthenticated && (
+        <li>
+          <p className={styles.notActiveLink}>Logout</p>
+        </li>
+      )}
     </ul>
   );
 };

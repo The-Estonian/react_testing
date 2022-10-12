@@ -14,6 +14,7 @@ const Contacts = () => {
   const asd = useRef();
   return (
     <div className={styles.picture}>
+      <div>
       <p className={styles.contactInfo} ref={fullNameRef}>
         Jaanus Saar
         <button
@@ -31,6 +32,8 @@ const Contacts = () => {
           }}
         ><img src={copyButton}/></button>
       </div>
+      </div>
+      <div>
       <p className={styles.contactInfo} ref={addressRef}>
       Europe, Estonia, Tartu
         <button
@@ -47,6 +50,7 @@ const Contacts = () => {
           }}
         ><img src={copyButton}/></button>
       </p>
+        </div>
       <div>
       <a href='https://www.linkedin.com/in/jaanus-s-3897a721b/' target='_blank'>
         <img className={styles.contactImage} src={LinkedIn} />

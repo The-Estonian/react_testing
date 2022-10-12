@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   margin: auto;
-  width: 80%;
+  width: 60%;
   height: 4rem;
   display: flex;
   align-items: center;
@@ -16,8 +16,12 @@
   padding: 1rem;
 }
 
-.navigation li:nth-last-child(3){
+/* .navigation li:nth-last-child(3){
 margin-left: auto;
+} */
+
+.navigation .authNav{
+  margin-left: 10%;
 }
 
 
