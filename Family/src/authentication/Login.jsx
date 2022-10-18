@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 
+import AnimatePage from '../components/AnimatePage';
 import styles from './Login.module.css';
 
 const Login = () => {
@@ -14,7 +15,6 @@ const Login = () => {
     setLoginRegister(!loginRegister);
   };
 
-  let disabledFeature = '';
   const formSubmitHandler = (e) => {
     e.preventDefault();
     setLoginState(
@@ -26,37 +26,42 @@ const Login = () => {
   };
 
   return (
-    <div className={styles.login}>
-      {loginState}
-      <form onSubmit={formSubmitHandler}>
-        {!loginRegister && (
+    <AnimatePage>
+      <div className={styles.login}>
+        {loginState}
+        <form onSubmit={formSubmitHandler}>
+          {!loginRegister && (
+            <label>
+              <span>First name</span>
+              <input type='text' ref={firstName}></input>
+            </label>
+          )}
+          {!loginRegister && (
+            <label>
+              <span>Last name</span>
+              <input type='text' ref={LastName}></input>
+            </label>
+          )}
           <label>
-            <span>First name</span>
-            <input type='text' ref={firstName}></input>
+            <span>Email</span>
+            <input type='text' ref={Email}></input>
           </label>
-        )}
-        {!loginRegister && (
           <label>
-            <span>Last name</span>
-            <input type='text' ref={LastName}></input>
+            <span>Password</span>
+            <input type='password' ref={Password}></input>
           </label>
-        )}
-        <label>
-          <span>Email</span>
-          <input type='text' ref={Email}></input>
-        </label>
-        <label>
-          <span>Password</span>
-          <input type='password' ref={Password}></input>
-        </label>
-        <button type='submit'>{loginRegister ? 'Submit' : 'Register'}</button>
-      </form>
-      <p className={styles.loginSwitchButton} onClick={loginOrRegisterHandler}>
-        {loginRegister
-          ? 'Click here to Register account!'
-          : 'Login to your account!'}
-      </p>
-    </div>
+          <button type='submit'>{loginRegister ? 'Submit' : 'Register'}</button>
+        </form>
+        <p
+          className={styles.loginSwitchButton}
+          onClick={loginOrRegisterHandler}
+        >
+          {loginRegister
+            ? 'Click here to Register account!'
+            : 'Login to your account!'}
+        </p>
+      </div>
+    </AnimatePage>
   );
 };
 

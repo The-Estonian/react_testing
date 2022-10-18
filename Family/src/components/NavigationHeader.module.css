@@ -29,15 +29,15 @@ margin-left: auto;
   padding: 1rem;
   cursor: pointer;
   background: linear-gradient(155deg, #414141, #7e7c7c, #414141, #7e7c7c);
-  border: 1px solid red;
+  border: 1px solid transparent;
   border-radius: 8px;
   margin: 0.1rem;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: rgba(226, 226, 226, 0.2) 0px 7px 29px 0px;
   transition: 0.3s;
 }
 
 .navigation li:hover {
-  transform: rotate(-5deg);
+  border: 1px solid red;
 }
 
 .notActiveLink {
@@ -73,4 +73,17 @@ margin-left: auto;
 .server-connection-working:hover,
 .server-connection-busy:hover {
   transform: rotate(0) !important;
+}
+
+@media (max-width: 710px) {
+  .navigation {
+    height: 3rem;
+  }
+  .navigation li:nth-last-of-type(2),
+  .navigation li:nth-last-of-type(1) {
+    display: none;
+  }
+  .navigation li a {
+    padding: 0;
+  }
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import Picture from '../components/Picture';
-import CSSTransition from 'react-transition-group/CSSTransition';
+import AnimatePage from '../components/AnimatePage';
 
 import styles from './Portfolio.module.css';
 
@@ -64,13 +64,15 @@ const Portfolio = () => {
     },
   ];
   return (
-    <div className={styles.portfolio}>
-      {portfolioObj.map((images) => (
-        <a key={images.img} href={images.url} target='_blank'>
-          <Picture img={images.img} />
-        </a>
-      ))}
-    </div>
+    <AnimatePage>
+      <div className={styles.portfolio}>
+        {portfolioObj.map((images) => (
+          <a key={images.img} href={images.url} target='_blank'>
+            <Picture img={images.img} />
+          </a>
+        ))}
+      </div>
+    </AnimatePage>
   );
 };
 

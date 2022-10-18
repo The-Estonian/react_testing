@@ -5,7 +5,9 @@ import {
   createRoutesFromElements,
   Route,
   Navigate,
+  useLocation,
 } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 
 import RootContainer from './components/RootContainer';
 const HomePage = React.lazy(() => import('./pages/HomePage'));
@@ -17,24 +19,24 @@ const Login = React.lazy(() => import('./authentication/Login'));
 
 import styles from './App.module.css';
 
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path='/' element={<RootContainer />}>
-      <Route index element={<HomePage />} />
-      <Route path='/skills' element={<Skills />} />
-      <Route path='/portfolio' element={<Portfolio />} />
-      <Route path='/contacts' element={<Contacts />} />
-      <Route path='/cv' element={<CV />} />
-      <Route path='/login' element={<Login />} />
-      <Route path='*' element={<Navigate to='/' />} />
-    </Route>
-  )
-);
-
 function App() {
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path='/' element={<RootContainer />}>
+        {/* <Route index element={<HomePage />} /> */}
+        <Route index element={<Navigate to='/cv' />} />
+        <Route path='/skills' element={<Skills />} />
+        <Route path='/portfolio' element={<Portfolio />} />
+        <Route path='/contacts' element={<Contacts />} />
+        <Route path='/cv' element={<CV />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='*' element={<Navigate to='/cv' />} />
+      </Route>
+    )
+  );
   return (
-    <Suspense fallback={<p>Loading...</p>}>
-      <RouterProvider router={router} />
+    <Suspense fallback={<p className={styles.centered}>Loading...</p>}>
+        <RouterProvider router={router} />
     </Suspense>
   );
 }
