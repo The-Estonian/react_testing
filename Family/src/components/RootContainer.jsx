@@ -9,7 +9,6 @@ import styles from './RootContainer.module.css';
 
 const RootContainer = (props) => {
   const location = useLocation();
-  console.log(location);
   return (
     <>
       <NavigationHeader />

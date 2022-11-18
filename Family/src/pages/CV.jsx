@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import AnimatePage from '../components/AnimatePage';
+import EducationModule from '../components/EducationModule';
 
 import styles from './CV.module.css';
+import { educationList } from '../education/educationList';
 
 import myImage from '../assets/images/resizeImg.jpg';
 
@@ -24,56 +26,48 @@ const CV = () => {
             </div>
           </div>
           <div className={styles['content__profileSummary']}>
+            <p>Hello!</p>
             <p>
-              The moment i decided to enter the coding profession, I used Google
-              to pick out my preferred Front-end, Back-end and Database
-              languages. I didn't pick only one of those because i knew that i
-              wouldn't be satisfied by doing things half-way and i would
-              definitely like to know how my input ends in a Database. After
-              careful consideration and opportunity to enter a coding academy to
-              learn Python i decided to pick React, Django and SQL as my top
-              picks to learn/master and live by. So all the free time i have, i
-              will invest into my picked languages and rest will come.
+              My name is Jaanus and i thank you in advance for showing interest
+              in my doings.
             </p>
             <p>
-              So i have been stacking knowledge on my picked
-              languages since September of 2021 and im still going strong!
+              I am currently focusing all my learnings into being able to create
+              a Project from scratch and push it into the cloud.
+            </p>
+            <p>
+              Being able to write some part of the code is half the fun. Seeing
+              how everything comes to alive is where the real fun starts!
             </p>
           </div>
           <h3>Languages & Current education</h3>
           <div className={styles['content__langEdu']}>
             <div className={styles['content__langEdu__languages']}>
-              <p>Estonian - Native</p>
-              <p>English - Working proficiency</p>
-              <p>Russian - Verbal proficiency</p>
+              <div>
+                <p>
+                  <i>Estonian</i>
+                </p>
+                <p>Native</p>
+              </div>
+              <div>
+                <p>
+                  <i>English</i>
+                </p>
+                <p>Working</p>
+                <p>proficiency</p>
+              </div>
+              <div>
+                <p>
+                  <i>Russian</i>
+                </p>
+                <p>Verbal</p>
+                <p>proficiency</p>
+              </div>
             </div>
             <div className={styles['content__langEdu__education']}>
-              <span className={styles['content__langEdu__education__divider']}>
-                <p>Academind - React</p>
-                <p>Sept 2022 - Oct 2022</p>
-                <p>
-                  React - The Complete Guide (incl Hooks, React Router, Redux)
-                </p>
-              </span>
-              <span className={styles['content__langEdu__education__divider']}>
-                <p>Academind - JavaScript</p>
-                <p>July 2022 - Sept 2022</p>
-                <p>
-                  JavaScript - The Complete Guide 2022 (Beginner + Advanced)
-                </p>
-              </span>
-              <span className={styles['content__langEdu__education__divider']}>
-                <p>Academind - CSS</p>
-                <p>Apr 2022 - May 2022</p>
-                <p>
-                  CSS - The Complete Guide 2022 (incl. Flexbox, Grid & Sass)
-                </p>
-              </span>
-              <span className={styles['content__langEdu__education__divider']}>
-                <p>Software Development Academy - Python</p>
-                <p>Oct 2021 - Jul 2022</p>
-                <p>Weekends, Remote, Zoom, 100% participation.</p>
-              </span>
+              {educationList.map((listItem) => (
+                <EducationModule key={listItem.id} listData={listItem} />
+              ))}
             </div>
           </div>
           <div className={styles['content__contacts']}>

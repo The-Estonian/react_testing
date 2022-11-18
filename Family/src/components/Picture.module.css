@@ -1,9 +1,16 @@
 .picture img {
-  border-radius: 10px;
+  border-radius: 8px;
   height: 15rem;
   width: 30rem;
   margin: 0.3rem;
-  box-shadow: rgba(255, 255, 255, 0.288) 0px 7px 29px 0px;
+  border: 1px solid transparent;
+}
+
+.picture img:hover {
+  border: 1px solid white;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 7px 29px 0px;
 }
 
 @media (max-width: 710px) {

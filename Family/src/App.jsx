@@ -10,12 +10,12 @@ import {
 import { motion, AnimatePresence } from 'framer-motion';
 
 import RootContainer from './components/RootContainer';
-const HomePage = React.lazy(() => import('./pages/HomePage'));
-const Skills = React.lazy(() => import('./pages/Skills'));
-const Portfolio = React.lazy(() => import('./pages/Portfolio'));
-const Contacts = React.lazy(() => import('./pages/Contacts'));
-const CV = React.lazy(() => import('./pages/CV'));
-const Login = React.lazy(() => import('./authentication/Login'));
+import HomePage from './pages/HomePage';
+import Skills from './pages/Skills';
+import Portfolio from './pages/Portfolio';
+import Contacts from './pages/Contacts';
+import CV from './pages/CV';
+import Login from './authentication/Login';
 
 import styles from './App.module.css';
 
